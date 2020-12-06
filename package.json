@@ -1,0 +1,25 @@
+{
+  "name": "projeto-final",
+  "version": "1.0.0",
+  "description": "projeto final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viviantoyota/projetofinal.git"
+  },
+  "author": "vivian toyota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viviantoyota/projetofinal/issues"
+  },
+  "homepage": "https://github.com/viviantoyota/projetofinal#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expres": "0.0.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.4"
+  }
+}
