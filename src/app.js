@@ -1,17 +1,17 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-//const db = require('./models/repository')
+const db = require('./configs/database')
 
 
-//db.connect()
+db.connect()
 app.use(cors())
 app.use(express.json())
 
 const index = require("./routes/index")
-const contatos = require("./routes/contatosRoute")
+const estacoes = require("./routes/estacoesRoute")
 
 app.use("/", index)
-app.use("/contatos", contatos)
+app.use("/estacoes", estacoes)
 
 module.exports = app
