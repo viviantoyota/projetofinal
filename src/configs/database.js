@@ -1,10 +1,14 @@
-console.log('entrei no database.....')
+
 const mongoose = require('mongoose')
-const DB_URL = 'mongodb://localhost:27017/Reprograma'
-console.log('estou na url:', DB_URL)
+const dotenv  =  require('dotenv')
+
+dotenv.config();
+
+const DB_URI = process.env.DB_URI 
+const PORT = process.env.PORT
 
 const connect = () => {
-    mongoose.connect(DB_URL,
+    mongoose.connect(DB_URI,
         {  useNewUrlParser: true,
             useCreateIndex: true,
             useFindAndModify: false,
@@ -18,3 +22,4 @@ const connect = () => {
 
 console.log('estou apos a connection,')
 module.exports = { connect }
+

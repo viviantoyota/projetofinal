@@ -5,5 +5,3 @@ app.listen(PORT, function(){
     console.log(`O APP esta rodando na porta ${PORT}`)
 })
 
-
-

@@ -8,6 +8,7 @@ db.connect()
 app.use(cors())
 app.use(express.json())
 
+
 const index = require("./routes/index")
 const estacoes = require("./routes/estacoesRoute")
 

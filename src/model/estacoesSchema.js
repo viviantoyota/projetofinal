@@ -9,6 +9,10 @@ const estacoesSchema = new Schema({
     cor_linha: {
         type: String,
         required: true,
+    },
+    numero_estacao: {
+        type: Number,
+        required: true
     }
     
 })
