@@ -7,8 +7,8 @@ const app = express()
 dotenv.config();
 const PORT = process.env.PORT || 5555
 
-const index = require("../projetofinal/src/routes/index")
-const estacoes = require("../projetofinal/src/routes/estacoesRoute")
+const index = require("./src/routes/index")
+const estacoes = require("./src/routes/estacoesRoute")
 
 
 mongoose.connect(process.env.MONGO_URI, {
