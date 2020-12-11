@@ -17,8 +17,8 @@ const getAll = (request, response) => {
 }
 
 const addEstacao = (request, response) => {
-    const estacaoBody = request.body //pegando o body que o usuario digitou
-    const estacao = new estacoesCollection(estacaoBody)//criando um novo dado com o body
+    const estacaoBody = request.body 
+    const estacao = new estacoesCollection(estacaoBody)
 
     estacao.save((error) => {
         if(error) {
@@ -32,7 +32,7 @@ const addEstacao = (request, response) => {
     })
 }
 
-/*const atualizarEstacao = (request, response)=>{
+const atualizarEstacao = (request, response)=>{
     const estacaoAtualizada = request.body
     const numero_estacao = request.params.numero_estacao
 
@@ -40,31 +40,35 @@ const addEstacao = (request, response) => {
     
     const atualizaId = numero.indexOf(numero_estacao)
 
-    //const estacaoAtualizadacomNumero = {id, ...estacaoAtualizada}
-    //musicas.splice(atualizaId, 1, estacaoAtualizadacomNumero)
+    const estacaoAtualizadacomNumero = {id, ...estacaoAtualizada}
+    musicas.splice(atualizaId, 1, estacaoAtualizadacomNumero)
 
     response.status(200).send(estacoes.find(estacoes => estacoes.numero_estacao === numero_estacao))
     console.log(estacoes)
      
 
-}*/
-
-const deletarEstacao = (req, res) => {
-    const {error} = model.deleteData(req.params.id)
-    if(error===null) {
-        res.status(204).send("Registro removido com sucesso.")
-    } else {
-        res.status(404).json({"message": error.message})
-    }
 }
+
+const deletarEstacao = (request, response) => {
+    const { id } = requisicao.params;
+ 
+     const estacoesFiltradas = estacoesCollection.filter(estacoes => {
+     return estacoes.id == id;
+     })[0];
+ 
+     const index = estacoesCollection.indexOf(estacoesFiltradas);
+   
+     estacoesCollection.splice(index, 1)
+ 
+     resposta.json(estacoesCollection)
+}
+
+
+
 
 module.exports = {
     getAll,
     addEstacao,
-    //atualizarEstacao,
+    atualizarEstacao,
     deletarEstacao
-    
 }
-
-//TEM QUE ATUALIZAR SAUDE E TIRAR A estacao
-//TEM QUE COLOCAR O NUMERO DA ESTCAO TUCURUVI
